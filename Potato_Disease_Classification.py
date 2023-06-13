@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
+""" 
+IN THIS PROJECT WE USE DEEP LEARNING TO CLASSIFY POTATO DISEASE
+THE DATASET IS AVAILABLE ON KAGGLE ( https://www.kaggle.com/datasets/arjuntejaswi/plant-village) 
 """
-Created on Sun Jun  4 18:43:41 2023
-
-@author: Ihtishaam
-"""
-
 import tensorflow as tf
 from tensorflow.keras import models, layers
 import matplotlib.pyplot as plt
