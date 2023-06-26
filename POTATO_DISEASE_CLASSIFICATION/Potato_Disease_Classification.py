@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 """
-Created on Sun Jun  4 18:43:41 2023
-
-@author: Ihtishaam
+In this project, we use the deep learning model for potato disease classification
+Here is the link where you can download the dataset ( https://www.kaggle.com/datasets/arjuntejaswi/plant-village )
 """
 
 import tensorflow as tf
