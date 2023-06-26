@@ -1,5 +1,5 @@
 """ 
-IN THIS PROJECT WE USE DEEP LEARNING TO CLASSIFY POTATO DISEASE
+IN THIS PROJECT, WE USE A DEEP LEARNING MODEL TO CLASSIFY POTATO dISEASES.
 THE DATASET IS AVAILABLE ON KAGGLE ( https://www.kaggle.com/datasets/arjuntejaswi/plant-village) 
 """
 import tensorflow as tf
@@ -12,7 +12,7 @@ BATCH_SIZE=32
 CHANNELS=3
 EPOCHS=5
 
-# Load the dataset using tensorflow from computer directory
+#Load the dataset using tensorflow from computer directory
 dataset=tf.keras.preprocessing.image_dataset_from_directory(
     "potato_disease",
     shuffle=True,
@@ -29,7 +29,7 @@ for image_batch, label_batch in dataset.take(1):
     print(image_batch.shape)
     print(label_batch.numpy())
 
-# show the samples image from the dataset
+# show the sample imageS from the dataset
 plt.figure(figsize=(10,10))
 for image_batch, label_batch in dataset.take(1):
     for i in range(12):
