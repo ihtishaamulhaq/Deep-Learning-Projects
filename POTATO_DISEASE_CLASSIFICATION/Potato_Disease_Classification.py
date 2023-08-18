@@ -3,11 +3,14 @@ In this project, we use the deep learning model for potato disease classificatio
 Here is the link where you can download the dataset ( https://www.kaggle.com/datasets/arjuntejaswi/plant-village )
 """
 
+"""
+import libraraies 
+"""
 import tensorflow as tf
 from tensorflow.keras import models, layers
 import matplotlib.pyplot as plt
 
-# defone the image size and batch size
+# define the image size, number of channels, epochs, and batch size
 IMAGE_SIZE=256
 BATCH_SIZE=32
 CHANNELS=3
@@ -25,7 +28,7 @@ dataset=tf.keras.preprocessing.image_dataset_from_directory(
 class_names=dataset.class_names
 print(class_names)
 
-# print the information about 1st batch (image_shape, batch_size, labels) 
+# print the information about the first batch (image_shape, batch_size, labels) 
 for image_batch, label_batch in dataset.take(1):
     print(image_batch.shape)
     print(label_batch.numpy())
@@ -66,8 +69,7 @@ train_data, val_data, test_data=get_dataset_partitions_tf(dataset)
 
 """
 Write the preprocessing layers for resizing the image 
-and rescaling it in betwee 0-1
-
+and rescaling it in between 0 and 1
 """
 resizing_and_rescaling=tf.keras.Sequential([
     layers.experimental.preprocessing.Resizing(IMAGE_SIZE, IMAGE_SIZE),
@@ -120,7 +122,7 @@ model.summary()
 
 """
 compile the model with well known optimizer
-Sparse Categorical Crossentropy loss is used because 
+Sparse Categorical cross-entropy loss is used because 
 of multi-class classification
 """
 
