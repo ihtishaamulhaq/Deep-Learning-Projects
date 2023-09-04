@@ -115,13 +115,13 @@ model=models.Sequential([
 model.build(input_shape=input_size)
 
 """
-model Summary
+Print the model Summary
 """
 
 model.summary()
 
 """
-compile the model with well known optimizer
+compile the model with well-known optimizer adam
 Sparse Categorical cross-entropy loss is used because 
 of multi-class classification
 """
@@ -145,7 +145,7 @@ history=model.fit(
     )
 
 """
-Evaluate the model acccuracy and loss on test dataset
+Evaluate the model's accuracy and loss on test dataset
 """
 
 Score=model.evaluate(test_data)
@@ -168,7 +168,7 @@ plt.title('Training and Validation Accuracy')
 plt.show()
 
 """
-plot the validation loss and loss graph
+plot the validation and Training loss graph
 """
 
 plt.figure(figsize=(8,8))
