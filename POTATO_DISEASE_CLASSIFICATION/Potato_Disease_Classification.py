@@ -1,5 +1,6 @@
 """
-In this project, we use the deep learning model for potato disease classification
+In this project, we use the Sequential deep learning model for potato disease classification
+There are three classes in this.
 Here is the link where you can download the dataset ( https://www.kaggle.com/datasets/arjuntejaswi/plant-village )
 """
 
