@@ -35,6 +35,6 @@ natural language processing, recommendation systems, autonomous vehicles, health
 <h4>Challenges:</h4> Training deep learning models can be computationally intensive and may require access to high-performance
 hardware (e.g., GPUs). Deep learning models can also be challenging to interpret, leading to research into explainable AI.<br><br><br>
 
-Deep learning has made significant advancements in recent years and has achieved state-of-the-art performance in various domains. 
+<p>Deep learning has made significant advancements in recent years and has achieved state-of-the-art performance in various domains. 
 It continues to be a driving force in the field of artificial intelligence and machine learning, with widespread applications and
-ongoing research into improving model performance, robustness, and interpretability.
+ongoing research into improving model performance, robustness, and interpretability.</p>
