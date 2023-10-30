@@ -134,6 +134,7 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover',
                'Dress', 'Coat', 'Sandal', 'Shirt', 
                'Sneaker', 'Bag', 'Ankle boot']
 # plot the confusion matrix
+plt.figure(figsize=(10,10), dpi=600)
 sns.heatmap(cm, annot=True, fmt="d", 
             xticklabels=class_names,
             yticklabels=class_names,
