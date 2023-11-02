@@ -10,8 +10,8 @@ image recognition and classification in the context of fashion and apparel.</h3>
 
 <h3>Image Categories</h3> 
 <p>Fashion-MNIST contains a total of <b>10</b> different categories of fashion items. Each category represents
-a distinct type of clothing or accessory. These categories include items like T-shirts, trousers, pullovers, dresses, coats, 
-sandals, shirts, sneakers, bags, and ankle boots.</p>
+a distinct type of clothing or accessory. These categories include items like <b>T-shirts, trousers, pullovers, dresses, coats, 
+sandals, shirts, sneakers, bags, and ankle boots</b>.</p>
 
 <h3>Image Size</h3> 
 <p>The dataset consists of <b>28x28</b> pixel grayscale images. These low-resolution images provide a challenging yet manageable task
