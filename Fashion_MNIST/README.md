@@ -9,7 +9,7 @@ image recognition and classification in the context of fashion and apparel.</h3>
 <h2>Here are some key details about the Fashion-MNIST dataset:</h2>
 
 <h3>Image Categories</h3> 
-<p>Fashion-MNIST contains a total of 10 different categories of fashion items. Each category represents
+<p>Fashion-MNIST contains a total of <b>10</b> different categories of fashion items. Each category represents
 a distinct type of clothing or accessory. These categories include items like T-shirts, trousers, pullovers, dresses, coats, 
 sandals, shirts, sneakers, bags, and ankle boots.</p>
 
@@ -18,7 +18,7 @@ sandals, shirts, sneakers, bags, and ankle boots.</p>
 for image classification, making it suitable for both educational and research purposes.</p>
 
 <h3>Number of Samples</h3> 
-<p>Fashion-MNIST contains <b>60,000 training images and <b>10,000</b>testing images, resulting in a total of <b>70,000</b> samples. 
+<p>Fashion-MNIST contains <b>60,000</b> training images and <b>10,000</b>testing images, resulting in a total of <b>70,000</b> samples. 
 The large number of samples allows for robust model training and evaluation.</p>
 
 <h3>Data Distribution</h3> 
