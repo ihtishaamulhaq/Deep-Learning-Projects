@@ -1,11 +1,12 @@
 <h1 style="text-align: center;">Fashion MNIST Dataset</h1>
-<h3>Fashion-MNIST is a popular and widely used dataset in the fields of machine learning and computer vision.
+<h3>
+Fashion-MNIST is a popular and widely used dataset in the fields of machine learning and computer vision.
 It serves as a benchmark for various image classification and deep learning tasks. Fashion-MNIST is essentially 
 an alternative to the traditional MNIST dataset, which contains handwritten digits. Instead of digits, Fashion-MNIST 
 consists of a collection of small grayscale images of fashion items, making it particularly suitable for tasks related to 
 image recognition and classification in the context of fashion and apparel.</h3>
 
-<h4>Here are some key details about the Fashion-MNIST dataset:</h4>
+<h2>Here are some key details about the Fashion-MNIST dataset:</h2>
 
 <h3>Image Categories</h3> 
 <p>Fashion-MNIST contains a total of 10 different categories of fashion items. Each category represents
@@ -13,15 +14,15 @@ a distinct type of clothing or accessory. These categories include items like T-
 sandals, shirts, sneakers, bags, and ankle boots.</p>
 
 <h3>Image Size</h3> 
-<p>The dataset consists of 28x28 pixel grayscale images. These low-resolution images provide a challenging yet manageable task
+<p>The dataset consists of <b>28x28</b> pixel grayscale images. These low-resolution images provide a challenging yet manageable task
 for image classification, making it suitable for both educational and research purposes.</p>
 
 <h3>Number of Samples</h3> 
-<p>Fashion-MNIST contains 60,000 training images and 10,000 testing images, resulting in a total of 70,000 samples. 
+<p>Fashion-MNIST contains <b>60,000 training images and <b>10,000</b>testing images, resulting in a total of <b>70,000</b> samples. 
 The large number of samples allows for robust model training and evaluation.</p>
 
 <h3>Data Distribution</h3> 
-<p>The dataset is evenly distributed across its 10 categories, meaning there are an equal number of samples for each fashion item.</p>
+<p>The dataset is evenly distributed across its <b>10</b> categories, meaning there are an equal number of samples for each fashion item.</p>
 
 <h3>Use Cases</h3> 
 <p>Fashion-MNIST is widely used for training and evaluating machine learning and deep learning models for image classification tasks.
