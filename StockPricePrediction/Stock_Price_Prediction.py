@@ -56,6 +56,7 @@ plt.plot(dataset['open'], label='Open Price', color='green')
 plt.xlabel('Date',size=14)
 plt.ylabel('Price',size=14)
 plt.legend(loc='upper left')
+plt.savefig('ActualOpenPrice.png')
 plt.show()
 
 plt.figure(figsize=(8,8))
@@ -63,6 +64,7 @@ plt.plot(dataset['close'], label='Close Price', color='blue')
 plt.xlabel('Date',size=14)
 plt.ylabel('Price',size=14)
 plt.legend(loc='upper left')
+plt.savefig('ActualClosingPrice.png')
 plt.show()
 
 # Perform preprocessing on the data
@@ -71,12 +73,13 @@ dataset[dataset.columns]=mmscaler.fit_transform(dataset)
 print(dataset)
 
 #split data into Training and testing
-training_size = round(len(dataset) * 0.75) #75% for training
+train_size = round(len(dataset) * 0.75)
 
 
-train_data = dataset[:training_size]
-test_data = dataset[training_size:]
-train_data.shape, test_data.shape
+train_data = dataset[:train_size]
+test_data = dataset[train_size:]
+print(train_data.shape)
+print(test_data.shape)
 
 def create_sequence(dataset):
     sequences = []
@@ -95,10 +98,10 @@ def create_sequence(dataset):
 
 train_data_seq, train_label = create_sequence(train_data)
 test_data_seq, test_label = create_sequence(test_data)
-train_data_seq.shape
-train_label.shape
-test_data_seq.shape 
-test_label.shape
+print(train_data_seq.shape)
+print(train_label.shape)
+print(test_data_seq.shape) 
+print(test_label.shape)
 
 # Building the model
 regressor_model=Sequential()
@@ -117,9 +120,10 @@ regressor_model.compile(loss='mean_squared_error',
                         optimizer='adam',
                         metrics=['mean_absolute_error'])
 
+#  Show the model Summary
 regressor_model.summary()
 
-# fitting the model by iterating the dataset over 50 times(50 epochs)
+# fitting the model 
 regressor_model.fit(train_data_seq, 
                     train_label, 
                     epochs = 50, 
