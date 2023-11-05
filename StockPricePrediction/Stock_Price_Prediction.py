@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Nov 11 12:04:50 2023
+Created on Sun Nov 05 12:04:50 2023
 
 @author: Ihtishaam
 """
@@ -84,11 +84,11 @@ print(test_data.shape)
 def create_sequence(dataset):
     sequences = []
     label = []
-    size=20
+    size=60
     data=len(dataset)
     sr_index = 0
     
-    for e_idx in range(size, data): #selecting 50 rows at a time
+    for e_idx in range(size, data): 
         sequences.append(dataset.iloc[sr_index:e_idx])
         label.append(dataset.iloc[e_idx])
         sr_index= sr_index + 1
