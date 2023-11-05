@@ -6,6 +6,13 @@ Created on Sun Nov 11 12:04:50 2023
 """
 
 import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+
+from keras.models import Sequential
+from keras.layers import LSTM, Dropout, Dense
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -42,3 +49,85 @@ print(dataset)
 dataset['date']=pd.to_datetime(dataset['date'].apply(lambda Y: Y.split()[0]))
 dataset.set_index('date', drop=True, inplace=True)
 print(dataset.head())
+
+#  Plotting the open and close price on date index
+plt.figure(figsize=(8,8))
+plt.plot(dataset['open'], label='Open Price', color='green')
+plt.xlabel('Date',size=14)
+plt.ylabel('Price',size=14)
+plt.legend(loc='upper left')
+plt.show()
+
+plt.figure(figsize=(8,8))
+plt.plot(dataset['close'], label='Close Price', color='blue')
+plt.xlabel('Date',size=14)
+plt.ylabel('Price',size=14)
+plt.legend(loc='upper left')
+plt.show()
+
+# Perform preprocessing on the data
+mmscaler=MinMaxScaler()
+dataset[dataset.columns]=mmscaler.fit_transform(dataset)
+print(dataset)
+
+#split data into Training and testing
+training_size = round(len(dataset) * 0.75) #75% for training
+
+
+train_data = dataset[:training_size]
+test_data = dataset[training_size:]
+train_data.shape, test_data.shape
+
+def create_sequence(dataset):
+    sequences = []
+    label = []
+    size=20
+    data=len(dataset)
+    sr_index = 0
+    
+    for e_idx in range(size, data): #selecting 50 rows at a time
+        sequences.append(dataset.iloc[sr_index:e_idx])
+        label.append(dataset.iloc[e_idx])
+        sr_index= sr_index + 1
+    return (np.array(sequences), np.array(label))
+
+
+
+train_data_seq, train_label = create_sequence(train_data)
+test_data_seq, test_label = create_sequence(test_data)
+train_data_seq.shape
+train_label.shape
+test_data_seq.shape 
+test_label.shape
+
+# Building the model
+regressor_model=Sequential()
+
+regressor_model.add(LSTM(units=40, return_sequences=True, input_shape=(train_data_seq.shape[1], train_data_seq.shape[2])))
+regressor_model.add(Dropout(0.1))
+
+regressor_model.add(LSTM(units=40))
+
+
+
+regressor_model.add(Dense(units=2))
+
+# compile the model
+regressor_model.compile(loss='mean_squared_error',
+                        optimizer='adam',
+                        metrics=['mean_absolute_error'])
+
+regressor_model.summary()
+
+# fitting the model by iterating the dataset over 50 times(50 epochs)
+regressor_model.fit(train_data_seq, 
+                    train_label, 
+                    epochs = 50, 
+                    validation_data = (test_data_seq, test_label),
+                    verbose = 1)
+
+
+
+
+
+
